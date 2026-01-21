@@ -1,4 +1,4 @@
-// // //
+// // // Print array
 
 // function printArry(arr) {
 //   // gothrough each element of an arry
