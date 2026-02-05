@@ -117,6 +117,8 @@
 // nums = [1, 2, 3, 4, 6];
 // target = 6;
 
+// brute force appraoch
+
 // first approach -> if i>5 print true and value
 // function goal() {
 //   const nums = [1, 2, 3, 4, 6];
@@ -132,19 +134,43 @@
 // }
 // console.log("Result :", goal());
 
-// // second apprach
-function goal() {
-  const nums = [1, 2, 3, 4, 6];
-  const target = 6;
-  for (let i = 0; i < nums.length; i++) {
-    for (let j = i + 1; j < nums.length; j++) {
-      if (nums[i] + nums[j] === target) {
-        console.log("Indices :", i, j);
-        return true;
-      }
+// // // second apprach
+// function goal() {
+//   const nums = [1, 2, 3, 4, 6];
+//   const target = 6;
+//   for (let i = 0; i < nums.length; i++) {
+//     for (let j = i + 1; j < nums.length; j++) {
+//       if (nums[i] + nums[j] === target) {
+//         console.log("Indices :", i, j);
+//         return true;
+//       }
+//     }
+//   }
+//   console.log("no pair found in this array");
+//   return false;
+// }
+// console.log("Results ->", goal());
+
+/////////// SOLUTION
+
+function foo() {
+  const s = [1, 2, 3, 4, 6];
+  const target = 10;
+  let left = 0;
+  let right = s.length - 1;
+  while (left < right) {
+    const sum = s[left] + s[right];
+    if (sum === target) {
+      console.log("Indices", left, right);
+      return true;
+    }
+    if (sum < target) {
+      left++;
+    } else {
+      right--;
     }
   }
-  console.log("no pair found in this array");
+  console.log("Indices", left, right);
   return false;
 }
-console.log("Results ->", goal());
+console.log("Result :", foo());
