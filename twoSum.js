@@ -93,18 +93,21 @@
 // }
 // console.log("Result: ", Sum());
 
-function foo() {
-  const s = [10, 12, 18, 24, 6, 8];
-  const target = 30;
-  for (let i = 0; i < s.length; i++) {
-    for (let j = i + 1; j < s.length; j++) {
-      if (s[j] + s[i] === target) {
-        console.log("Indices:", i, j);
+export function foo() {
+  const s = [10, 12, 11, 18, 5, 6];
+  const target = 300;
+  for (let a = 0; a < s.length; a++) {
+    for (let b = a + 1; b < s.length; b++) {
+      if (s[a] + s[b] === target) {
+        console.log("target :", target);
+        console.log("indices :", a, b);
         return true;
       }
     }
   }
+  console.log("target :", target);
+
+  console.log("No match found");
   return false;
-  console.log("No pair Found");
 }
-console.log("Result-> ", foo());
+console.log("Result: ", foo());
