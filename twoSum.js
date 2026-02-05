@@ -118,16 +118,33 @@
 // target = 6;
 
 // first approach -> if i>5 print true and value
+// function goal() {
+//   const nums = [1, 2, 3, 4, 6];
+//   const target = 6;
+//   for (let i = 0; i < nums.length; i++) {
+//     if (nums[i] > 5) {
+//       console.log("goal achived");
+//       return true;
+//     }
+//   }
+//   console.log("No match found in array");
+//   return false;
+// }
+// console.log("Result :", goal());
+
+// // second apprach
 function goal() {
   const nums = [1, 2, 3, 4, 6];
   const target = 6;
   for (let i = 0; i < nums.length; i++) {
-    if (nums[i] > 5) {
-      console.log("goal achived");
-      return true;
+    for (let j = i + 1; j < nums.length; j++) {
+      if (nums[i] + nums[j] === target) {
+        console.log("Indices :", i, j);
+        return true;
+      }
     }
   }
-  console.log("No match found in array");
+  console.log("no pair found in this array");
   return false;
 }
-console.log("Result :", goal());
+console.log("Results ->", goal());
