@@ -77,18 +77,34 @@
 
 ////////////////////// RETURN INDICES //////////////////
 // return index number with result
-function Sum() {
-  const arr = [10, 12, 18, 6, 4];
+// function Sum() {
+//   const arr = [10, 12, 18, 6, 4];
+//   const target = 30;
+//   for (let i = 0; i < arr.length; i++) {
+//     for (let j = i + 1; j < arr.length; j++) {
+//       if (arr[i] + arr[j] === target) {
+//         console.log("Indices: ", i, j);
+//         return true;
+//       }
+//     }
+//   }
+//   return false;
+//   console.log("No pair Found in this array");
+// }
+// console.log("Result: ", Sum());
+
+function foo() {
+  const s = [10, 12, 18, 24, 6, 8];
   const target = 30;
-  for (let i = 0; i < arr.length; i++) {
-    for (let j = i + 1; j < arr.length; j++) {
-      if (arr[i] + arr[j] === target) {
-        console.log("Indices: ", i, j);
+  for (let i = 0; i < s.length; i++) {
+    for (let j = i + 1; j < s.length; j++) {
+      if (s[j] + s[i] === target) {
+        console.log("Indices:", i, j);
         return true;
       }
     }
   }
   return false;
-  console.log("No pair Found in this array");
+  console.log("No pair Found");
 }
-console.log("Result: ", Sum());
+console.log("Result-> ", foo());
