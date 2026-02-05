@@ -92,22 +92,42 @@
 //   console.log("No pair Found in this array");
 // }
 // console.log("Result: ", Sum());
+//=========================================================================
+// export function foo() {
+//   const s = [10, 12, 11, 18, 5, 6];
+//   const target = 300;
+//   for (let a = 0; a < s.length; a++) {
+//     for (let b = a + 1; b < s.length; b++) {
+//       if (s[a] + s[b] === target) {
+//         console.log("target :", target);
+//         console.log("indices :", a, b);
+//         return true;
+//       }
+//     }
+//   }
+//   console.log("target :", target);
 
-export function foo() {
-  const s = [10, 12, 11, 18, 5, 6];
-  const target = 300;
-  for (let a = 0; a < s.length; a++) {
-    for (let b = a + 1; b < s.length; b++) {
-      if (s[a] + s[b] === target) {
-        console.log("target :", target);
-        console.log("indices :", a, b);
-        return true;
-      }
+//   console.log("No match found");
+//   return false;
+// }
+// console.log("Result: ", foo());
+
+/// ====================== Problems =======================================
+
+// nums = [1, 2, 3, 4, 6];
+// target = 6;
+
+// first approach -> if i>5 print true and value
+function goal() {
+  const nums = [1, 2, 3, 4, 6];
+  const target = 6;
+  for (let i = 0; i < nums.length; i++) {
+    if (nums[i] > 5) {
+      console.log("goal achived");
+      return true;
     }
   }
-  console.log("target :", target);
-
-  console.log("No match found");
+  console.log("No match found in array");
   return false;
 }
-console.log("Result: ", foo());
+console.log("Result :", goal());
