@@ -153,16 +153,41 @@
 
 /////////// SOLUTION
 
-function foo() {
+// function foo() {
+//   const s = [1, 2, 3, 4, 6];
+//   const target = 10;
+//   let left = 0;
+//   let right = s.length - 1;
+//   while (left < right) {
+//     const sum = s[left] + s[right];
+//     if (sum === target) {
+//       console.log("Target :", target);
+//       console.log("Indices :", left, right);
+//       return true;
+//     }
+//     if (sum < target) {
+//       left++;
+//     } else {
+//       right--;
+//     }
+//   }
+//   console.log("Target :", target);
+//   console.log("No pair found ");
+//   return false;
+// }
+// console.log("Result :", foo());
+
+function two() {
   const s = [1, 2, 3, 4, 6];
-  const target = 10;
+  const target = 100;
+  console.log("Target :", target);
   let left = 0;
   let right = s.length - 1;
   while (left < right) {
     const sum = s[left] + s[right];
     if (sum === target) {
-      console.log("Indices", left, right);
-      return true;
+      console.log("Indices :", left, right);
+      return [s[left], s[right]];
     }
     if (sum < target) {
       left++;
@@ -170,7 +195,8 @@ function foo() {
       right--;
     }
   }
-  console.log("Indices", left, right);
-  return false;
+
+  console.log("No pair found");
+  return null;
 }
-console.log("Result :", foo());
+console.log("Result :", two());
