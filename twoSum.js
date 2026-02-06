@@ -177,26 +177,29 @@
 // }
 // console.log("Result :", foo());
 
-function two() {
-  const s = [1, 2, 3, 4, 6];
-  const target = 100;
-  console.log("Target :", target);
-  let left = 0;
-  let right = s.length - 1;
-  while (left < right) {
-    const sum = s[left] + s[right];
-    if (sum === target) {
-      console.log("Indices :", left, right);
-      return [s[left], s[right]];
-    }
-    if (sum < target) {
-      left++;
-    } else {
-      right--;
+function foo() {
+  const s = [10, 20, 25, 40, 50, 1, 2, 3, 7, 4, 6];
+  const target = 17;
+  console.log("target :", target);
+  s.sort((a, b) => a - b);
+  console.log(s);
+  let a = 0;
+  let b = s.length - 1;
+  while (a < b) {
+    const goal = s[a] + s[b];
+    {
+      if (goal === target) {
+        console.log("Indices :", a, b);
+        return [s[a], s[b]];
+      }
+      if (goal < target) {
+        a++;
+      } else {
+        b--;
+      }
     }
   }
-
   console.log("No pair found");
   return null;
 }
-console.log("Result :", two());
+console.log("Result :", foo());
