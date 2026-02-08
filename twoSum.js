@@ -151,55 +151,24 @@
 // }
 // console.log("Results ->", goal());
 
-/////////// SOLUTION
+// Example 1:
+// Input: nums = [2,7,11,15], target = 9
+// Output: [0,1]
 
-// function foo() {
-//   const s = [1, 2, 3, 4, 6];
-//   const target = 10;
-//   let left = 0;
-//   let right = s.length - 1;
-//   while (left < right) {
-//     const sum = s[left] + s[right];
-//     if (sum === target) {
-//       console.log("Target :", target);
-//       console.log("Indices :", left, right);
-//       return true;
-//     }
-//     if (sum < target) {
-//       left++;
-//     } else {
-//       right--;
-//     }
-//   }
-//   console.log("Target :", target);
-//   console.log("No pair found ");
-//   return false;
-// }
-// console.log("Result :", foo());
-
-function foo() {
-  const s = [10, 20, 25, 40, 50, 1, 2, 3, 7, 4, 6];
-  const target = 17;
+function sum() {
+  const nums = [2, 7, 11, 15];
+  const target = 9;
   console.log("target :", target);
-  s.sort((a, b) => a - b);
-  console.log(s);
-  let a = 0;
-  let b = s.length - 1;
-  while (a < b) {
-    const goal = s[a] + s[b];
-    {
-      if (goal === target) {
-        console.log("Indices :", a, b);
-        return [s[a], s[b]];
-      }
-      if (goal < target) {
-        a++;
-      } else {
-        b--;
+  for (let i = 0; i < nums.length; i++) {
+    for (let j = i + 1; j < nums.length; j++) {
+      if (nums[i] + nums[j] === target) {
+        console.log("Match found in array");
+        console.log("Indices :", i, j);
+        return [nums[i], nums[j]];
       }
     }
   }
-  console.log("No pair found");
+  console.log("No match found in array");
   return null;
 }
-console.log("Result :", foo());
+console.log(sum());
