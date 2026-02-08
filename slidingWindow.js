@@ -14,24 +14,43 @@
 
 //===================================
 
-function maxSumSubarray() {
-  let windowSum = 0;
+// function maxSumSubarray() {
+//   let windowSum = 0;
+//   const arr = [2, 1, 5, 1, 3, 2];
+//   const k = 3;
+
+//   // 1st window
+//   for (let i = 0; i < k; i++) {
+//     windowSum = windowSum + arr[i];
+//   }
+//   let maxSum = windowSum;
+
+//   // slide window
+//   for (let i = k; i < arr.length; i++) {
+//     windowSum = windowSum + arr[i];
+//     windowSum = windowSum - arr[i - k];
+//     maxSum = Math.max(maxSum, windowSum);
+//   }
+//   return maxSum;
+// }
+// console.log("Result:", maxSumSubarray());
+// maxSumSubarray();
+/////////===============================================
+// arr = [2, 1, 5, 1, 3, 2];
+// k = 3;
+function max() {
   const arr = [2, 1, 5, 1, 3, 2];
   const k = 3;
-
-  // 1st window
-  for (let i = 0; i < k; i++) {
-    windowSum = windowSum + arr[i];
+  let a = 0;
+  for (let i = 0; i < arr.length; i++) {
+    a = a + arr[i];
   }
-  let maxSum = windowSum;
-
-  // slide window
+  let maxSum = a;
   for (let i = k; i < arr.length; i++) {
-    windowSum = windowSum + arr[i];
-    windowSum = windowSum - arr[i - k];
-    maxSum = Math.max(maxSum, windowSum);
+    a = a + arr[i];
+    a = a - arr[i - k];
+    maxSum = Math.max(maxSum, a);
   }
   return maxSum;
 }
-console.log("Result:", maxSumSubarray());
-maxSumSubarray();
+console.log("Result :", max());

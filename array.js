@@ -8,11 +8,19 @@
 //   }
 // }
 
-function print() {
-  const arr = [1, 2, 3, 4, 5];
+// function print() {
+//   const arr = [1, 2, 3, 4, 5];
+//   for (let i = 0; i < arr.length; i++) {
+//     console.log(arr[i]);
+//   }
+// }
+
+// print();
+
+function printArray() {
+  const arr = [3, 7, 2, 9, 4];
   for (let i = 0; i < arr.length; i++) {
     console.log(arr[i]);
   }
 }
-
-print();
+printArray();

@@ -4,7 +4,7 @@
 // function twoSum () {
 // const arr = [array elements]
 // const target = [target sum]
-// traverse through array and set b index to 0 = i=0 with for loop
+// traverse through array and set b index to 0, i=0 with for loop
 // nested for loop set to + 1 = j= i+1
 // check if arr[i] + arr[j] === target
 // if true return true
@@ -28,38 +28,6 @@
 // console.log("Result:", twoSum());
 
 //===========================================================
-
-// two sum problem with hashMap approach
-/////////////////////////logic//////////////////
-
-// function twoSum () {
-// const array and
-//create an empty hashMap and traverse
-// calculate required value = target - current element
-// if required value exist in msp
-// return true
-// else
-// store current element in map
-// after loop return false
-// }
-
-//////////////////////code/////////////////////
-
-// function twoSum() {
-//   const arr = [2, 4, 6, 8, 1, 3, 5];
-//   const target = 90;
-//   let map = new Map();
-//   for (let i = 0; i < arr.length; i++) {
-//     let needed = target - arr[i];
-
-//     if (map.has(needed)) {
-//       return true;
-//     }
-//     map.set(arr[i], true);
-//   }
-//   return false;
-// }
-// console.log("Result:", twoSum());
 
 // function twoSum() {
 //   const arr = [2, 4, 6, 8, 1, 3, 5, 7];
@@ -151,24 +119,24 @@
 // }
 // console.log("Results ->", goal());
 
-// Example 1:
-// Input: nums = [2,7,11,15], target = 9
-// Output: [0,1]
+// nums = [2, 7, 11, 15];
+// target = 9;
+// expect result  = [0,1]
 
 function sum() {
   const nums = [2, 7, 11, 15];
   const target = 9;
-  console.log("target :", target);
+  console.log("Target :", target);
   for (let i = 0; i < nums.length; i++) {
     for (let j = i + 1; j < nums.length; j++) {
+      // i = 2 [0] , j =7 [1]
       if (nums[i] + nums[j] === target) {
-        console.log("Match found in array");
         console.log("Indices :", i, j);
-        return [nums[i], nums[j]];
+        // return [nums[i] + nums[j]];
       }
     }
   }
-  console.log("No match found in array");
+  console.log("No match found");
   return null;
 }
-console.log(sum());
+console.log("Result :", sum());
