@@ -69,7 +69,18 @@
 // in case of "tanish"-100 will give error NaN.
 
 //==============================
-let a = 100;
-let z = a++;
-console.log(a + z);
-// a  = 100 , z =101 , a+z = a+z = 201
+// let a = 100;
+// let z = a++; // a++ first use then increment
+// console.log(a + z);
+// // a  = 100 , z =101 , a+z = a+z = 201
+
+// let arr = [1,10,18,14,6]
+// function abc(b, ...a) {
+//     console.log(a)
+// }
+// abc(8,9,10,11,12)
+// output will be 9,10,11,12
+// 8 will goes in b and ...a will spread and create a new array
+
+const arr = ["a", "1", "b", "2", "c", "3"];
+// seprate them
