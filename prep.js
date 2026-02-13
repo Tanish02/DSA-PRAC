@@ -52,3 +52,24 @@
 // console.log(a === b);  // false
 
 //===========================
+
+// let arr = ["tanish", "ash"];
+// // check character present in 1st string
+// let [str1, str2] = arr;
+// let charSet = new Set(str1);
+// let result = {};
+// for (let char of str2) {
+//   result[char] = charSet.has(char);
+// }
+// console.log(result);
+//======================================
+
+// console.log("tanish" + 100);
+// in case of "tanish"+100 will contacinate and give tanish100.
+// in case of "tanish"-100 will give error NaN.
+
+//==============================
+let a = 100;
+let z = a++;
+console.log(a + z);
+// a  = 100 , z =101 , a+z = a+z = 201
