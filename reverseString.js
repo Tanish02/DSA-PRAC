@@ -14,8 +14,9 @@
 // console.log(arr); // My name is Tanish
 // console.log(str); // hsinaT si eman yM
 
-let str = "My name is Tanish"; // yM eman si hsinaT
-let words = str.split(" ");
-let reversed = words.map((words) => words.split("").reverse().join(""));
-let result = reversed.join(" ");
-console.log(result);
+//
+let str = "my name is tanish";
+let str1 = str.split(" ");
+let str2 = str1.map((str1) => str1.split("").reverse().join(""));
+let str3 = str2.join(" ");
+console.log(str3);
