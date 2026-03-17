@@ -39,9 +39,7 @@
 // console.log("Result :", str3);
 
 let str = "My name is Tanish";
-let str1 = str.split(" ");
-// console.log(str1);
-let str2 = str1.map((str1) => str1.split("").reverse("").join(""));
-// console.log(str2);
-let str3 = str2.join(" ");
-console.log(str3);
+let str1 = str.split(" "); // [My,name,is,Tanish]
+let str2 = str1.map((str1) => str1.split("").reverse().join("")); // map M-y = y-M = yM
+let str3 = str2.join(" "); // [yM.eman,si,hsinaT]  = yM eman si hsinaT
+console.log(str3); // print str3
