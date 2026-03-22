@@ -156,45 +156,103 @@
 //7.2 Input: "a1B2c3";
 // Output: "a*B*c*";
 
-// 7
-const str1 = "aBcD";
-const replace7 = () => {
-  let result = "";
-  for (let k of str1) {
+// // 7
+// const str1 = "aBcD";
+// const replace7 = () => {
+//   let result = "";
+//   for (let k of str1) {
+//     if (k >= "a" && k <= "z") {
+//       result += "*";
+//     } else result += k;
+//   }
+//   return result;
+// };
+// console.log(replace7());
+
+// // 7.1
+// const str2 = "aBcD";
+// const replace7_1 = () => {
+//   let result1 = "";
+//   for (let k of str2) {
+//     if (k >= "A" && k <= "Z") {
+//       result1 += "#";
+//     } else {
+//       result1 += k;
+//     }
+//   }
+//   return result1;
+// };
+// console.log(replace7_1());
+
+// // 7.2
+// const str3 = "a1B2c3";
+// const replace7_3 = () => {
+//   let result2 = "";
+//   for (let k of str3) {
+//     if (k >= "0" && k <= "9") {
+//       result2 += "*";
+//     } else {
+//       result2 += k;
+//     }
+//   }
+//   return result2;
+// };
+// console.log(replace7_3());
+
+//==================================================
+// 8 Check if All Uppercase
+// "ABC" → true
+
+//8.1 Input: "abc"
+// Output: true
+
+//8.2 Input: "abC";
+// Output: false;
+
+// 8.3 Input: "12345";
+// Output: true;
+// 8.4 Input: "12a45";
+// Output: false;
+// 8.5 Input: "1245@$";
+// Output: false;
+
+const check8_1 = (str) => {
+  for (let i = 0; i < str.length; i++) {
+    let k = str[i];
     if (k >= "a" && k <= "z") {
-      result += "*";
-    } else result += k;
+      return false;
+    }
   }
-  return result;
+  return true;
 };
-console.log(replace7());
+console.log(check8_1("ABC"));
 
-// 7.1
-const str2 = "aBcD";
-const replace7_1 = () => {
-  let result1 = "";
-  for (let k of str2) {
+const check8_2 = (str1) => {
+  for (let k of str1) {
     if (k >= "A" && k <= "Z") {
-      result1 += "#";
-    } else {
-      result1 += k;
+      return false;
     }
   }
-  return result1;
+  return true;
 };
-console.log(replace7_1());
+console.log(check8_2("abC"));
 
-// 7.2
-const str3 = "a1B2c3";
-const replace7_3 = () => {
-  let result2 = "";
-  for (let k of str3) {
-    if (k >= "0" && k <= "9") {
-      result2 += "*";
-    } else {
-      result2 += k;
+// need practice more this
+const check8_3 = (str2) => {
+  for (let k of str2) {
+    if (!(k >= "0" && k <= "9")) {
+      return false;
     }
   }
-  return result2;
+  return true;
 };
-console.log(replace7_3());
+
+const check8_4 = (str1) => {
+  for (k of str1) {
+    if (k >= "a" && k <= "z") {
+      return false;
+    }
+  }
+  return true;
+};
+console.log(check8_4("12a45"));
