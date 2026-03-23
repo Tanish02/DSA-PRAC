@@ -324,23 +324,52 @@
 // Input: "aBcD";
 // Output: "dCbA";
 
-const charswitch = (str) => {
-  let str1 = str.split("").reverse().join("");
-  let result = "";
-  let count = 0;
+// const charswitch = (str) => {
+//   let str1 = str.split("").reverse().join("");
+//   let result = "";
+//   let count = 0;
 
-  for (let k of str1) {
+//   for (let k of str1) {
+//     let code = k.charCodeAt(0);
+//     if (k >= "a" && k <= "z") {
+//       result += String.fromCharCode(code - 32);
+//       count++;
+//     } else if (k >= "A" && k <= "Z") {
+//       result += String.fromCharCode(code + 32);
+//       count++;
+//     } else {
+//       result += k;
+//     }
+//   }
+//   return { result, count };
+// };
+// console.log(charswitch("aBcD"));
+
+//=============================================
+// // 10. Count Vowels & Consonants
+
+// input : "taNish123@AEi";
+// output : vowels : 5
+//           consonants : rest of string count
+// without inbuild function
+
+const vow = (str) => {
+  let vowels = 0;
+  let consonants = 0;
+  for (let k of str) {
     let code = k.charCodeAt(0);
+
+    if (k >= "A" && k <= "Z") {
+      k = String.fromCharCode(code + 32);
+    }
     if (k >= "a" && k <= "z") {
-      result += String.fromCharCode(code - 32);
-      count++;
-    } else if (k >= "A" && k <= "Z") {
-      result += String.fromCharCode(code + 32);
-      count++;
-    } else {
-      result += k;
+      if (k === "a" || k === "e" || k === "i" || k === "o" || k === "u") {
+        vowels++;
+      } else {
+        consonants++;
+      }
     }
   }
-  return { result, count };
+  return { vowels, consonants };
 };
-console.log(charswitch("aBcD"));
+console.log(vow("taNish123@AEi"));
