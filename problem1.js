@@ -262,13 +262,38 @@
 //8.6 input = "123456"
 // output true
 
-const allDigit = (str) => {
+// const allDigit = (str) => {
+//   for (let k of str) {
+//     if (!(k >= "0" && k <= "9")) {
+//       return false;
+//     }
+//   }
+//   return true;
+// };
+// console.log(allDigit("123ta45@$"));
+// console.log(allDigit("123456"));
+
+//==========================================
+// 9@ Toggle WITHOUT built-in ❗
+// 👉 Uses:
+// charCodeAt()
+
+// input = AbCd
+// output = aBcD
+// dont use inbuild function
+
+const charSwitch = (str) => {
+  let result = "";
   for (let k of str) {
-    if (!(k >= "0" && k <= "9")) {
-      return false;
+    let code = k.charCodeAt(0);
+    if (k >= "a" && k <= "z") {
+      result += String.fromCharCode(code - 32);
+    } else if (k >= "A" && k <= "Z") {
+      result += String.fromCharCode(code + 32);
+    } else {
+      result += k;
     }
   }
-  return true;
+  return result;
 };
-console.log(allDigit("123ta45@$"));
-console.log(allDigit("123456"));
+console.log(charSwitch("Ab12Cd"));
