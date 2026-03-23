@@ -282,18 +282,65 @@
 // output = aBcD
 // dont use inbuild function
 
-const charSwitch = (str) => {
+// const charSwitch = (str) => {
+//   let result = "";
+//   for (let k of str) {
+//     let code = k.charCodeAt(0);
+//     if (k >= "a" && k <= "z") {
+//       result += String.fromCharCode(code - 32);
+//     } else if (k >= "A" && k <= "Z") {
+//       result += String.fromCharCode(code + 32);
+//     } else {
+//       result += k;
+//     }
+//   }
+//   return result;
+// };
+// console.log(charSwitch("Ab12Cd"));
+
+// Input: "a1B@c";
+// Output: "A1b@C";
+// Input: "aBcD";
+// Output: "ABCD";
+
+// const charswitch = (str) => {
+//   let result = "";
+//   for (let k of str) {
+//     let code = k.charCodeAt(0);
+//     if (k >= "a" && k <= "z") {
+//       // lower to upper
+//       result += String.fromCharCode(code - 32);
+//     } else if (k >= "A" && k <= "Z") {
+//       // upper to lower
+//       result += String.fromCharCode(code + 32);
+//     } else {
+//       result += k;
+//     }
+//   }
+//   return result;
+// };
+// console.log(charswitch("a1B@c"));
+
+// Input: "aBcD";
+// Output: "dCbA";
+
+const charswitch = (str) => {
+  let str1 = str.split("").reverse().join("");
   let result = "";
-  for (let k of str) {
+  let count = 0;
+
+  for (let k of str1) {
     let code = k.charCodeAt(0);
     if (k >= "a" && k <= "z") {
       result += String.fromCharCode(code - 32);
+      count++;
     } else if (k >= "A" && k <= "Z") {
       result += String.fromCharCode(code + 32);
+      count++;
     } else {
       result += k;
     }
   }
-  return result;
+  return { result, count };
 };
-console.log(charSwitch("Ab12Cd"));
+console.log(charswitch("aBcD"));
