@@ -216,43 +216,59 @@
 // 8.5 Input: "1245@$";
 // Output: false;
 
-const check8_1 = (str) => {
-  for (let i = 0; i < str.length; i++) {
-    let k = str[i];
-    if (k >= "a" && k <= "z") {
-      return false;
-    }
-  }
-  return true;
-};
-console.log(check8_1("ABC"));
+// const check8_1 = (str) => {
+//   for (let i = 0; i < str.length; i++) {
+//     let k = str[i];
+//     if (k >= "a" && k <= "z") {
+//       return false;
+//     }
+//   }
+//   return true;
+// };
+// console.log(check8_1("ABC"));
 
-const check8_2 = (str1) => {
-  for (let k of str1) {
-    if (k >= "A" && k <= "Z") {
-      return false;
-    }
-  }
-  return true;
-};
-console.log(check8_2("abC"));
+// const check8_2 = (str1) => {
+//   for (let k of str1) {
+//     if (k >= "A" && k <= "Z") {
+//       return false;
+//     }
+//   }
+//   return true;
+// };
+// console.log(check8_2("abC"));
 
-// need practice more this
-const check8_3 = (str2) => {
-  for (let k of str2) {
+// const check8_4 = (str1) => {
+//   for (k of str1) {
+//     if (k >= "a" && k <= "z") {
+//       return false;
+//     }
+//   }
+//   return true;
+// };
+// console.log(check8_4("12a45"));
+
+// // need practice more this
+// const check8_3 = (str2) => {
+//   for (let k of str2) {
+//     if (!(k >= "0" && k <= "9")) {
+//       return false;
+//     }
+//   }
+//   return true;
+// };
+
+//8.5 input = "123ta45@$"
+// output false
+//8.6 input = "123456"
+// output true
+
+const allDigit = (str) => {
+  for (let k of str) {
     if (!(k >= "0" && k <= "9")) {
       return false;
     }
   }
   return true;
 };
-
-const check8_4 = (str1) => {
-  for (k of str1) {
-    if (k >= "a" && k <= "z") {
-      return false;
-    }
-  }
-  return true;
-};
-console.log(check8_4("12a45"));
+console.log(allDigit("123ta45@$"));
+console.log(allDigit("123456"));
