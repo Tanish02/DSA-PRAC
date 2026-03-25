@@ -71,37 +71,78 @@
 // Input: "aabbcdd"
 // Output: "c"
 
-// approach 1 = only show 1st non repeat char
-const nonrepeatchar = (str) => {
-  let check = {};
-  for (let k of str) {
-    check[k] = (check[k] || 0) + 1;
-  }
-  for (let k of str) {
-    if (check[k] === 1) {
-      return k;
-    }
-  }
-  return null;
-};
-console.log(nonrepeatchar("aabbcddeff"));
+// // approach 1 = only show 1st non repeat char
+// const nonrepeatchar = (str) => {
+//   let check = {};
+//   for (let k of str) {
+//     check[k] = (check[k] || 0) + 1;
+//   }
+//   for (let k of str) {
+//     if (check[k] === 1) {
+//       return k;
+//     }
+//   }
+//   return null;
+// };
+// console.log(nonrepeatchar("aabbcddeff"));
 
-// approach 2 = show All non-repeating char
-const nonrepeatchar2 = (strr) => {
-  let check = {};
-  let result = [];
-  for (let k of strr) {
-    check[k] = (check[k] || 0) + 1;
-  }
-  for (let k of strr) {
-    if (check[k] === 1) {
-      result.push(k);
+// // approach 2 = show All non-repeating char
+// const nonrepeatchar2 = (strr) => {
+//   let check = {};
+//   let result = [];
+//   for (let k of strr) {
+//     check[k] = (check[k] || 0) + 1;
+//   }
+//   for (let k of strr) {
+//     if (check[k] === 1) {
+//       result.push(k);
+//     }
+//   }
+//   if (result.length > 0) {
+//     return result;
+//   } else {
+//     return null;
+//   }
+// };
+// console.log(nonrepeatchar2, "aabbcddeff");
+
+// ============================================
+// 🟡 3. Maximum Occurring Character
+// Input: "aaabbccccd"
+// Output: "c"
+
+// approach 1
+const maxchar = (str) => {
+  let freq = {};
+  let max = 0;
+  let result = "";
+  for (let k of str) {
+    freq[k] = (freq[k] || 0) + 1;
+
+    if (freq[k] > max) {
+      max = freq[k];
+      result = k;
     }
   }
-  if (result.length > 0) {
-    return result;
-  } else {
-    return null;
-  }
+  return { result };
 };
-console.log(nonrepeatchar2, "aabbcddeff");
+console.log(maxchar("aaabbccccd"));
+
+// approach 2
+
+const maxChar = (str) => {
+  let map = new Map();
+  let max = 0;
+  let result = "";
+
+  for (let k of str) {
+    map.set(k, (map.get(k) || 0) + 1);
+
+    if (map.get(k) > max) {
+      max = map.get(k);
+      result = k;
+    }
+  }
+  return result;
+};
+console.log(maxChar("aaabbccccd"));
