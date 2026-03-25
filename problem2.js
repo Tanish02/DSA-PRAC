@@ -40,8 +40,8 @@
 // Output: "abcde"
 
 // approach 1
-// const removedup = (str) => [...new Set(str)].join("");
-// console.log(removedup("aabbccdde"));
+const removedup1 = (str) => [...new Set(str)].join("");
+console.log(removedup1("aabbccdde"));
 
 // approach 2
 const removedup = (str) => {
@@ -57,3 +57,11 @@ const removedup = (str) => {
   return result;
 };
 console.log(removedup("aabbccdde"));
+
+// approach 3
+let str2 = "testing"; // tesing
+let arr1 = str2.split("");
+let value = new Set(arr1);
+let arr2 = [...value];
+let str3 = arr2.join("");
+console.log(str3);
