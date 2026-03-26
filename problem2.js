@@ -111,38 +111,71 @@
 // Input: "aaabbccccd"
 // Output: "c"
 
+// // approach 1
+// const maxchar = (str) => {
+//   let freq = {};
+//   let max = 0;
+//   let result = "";
+//   for (let k of str) {
+//     freq[k] = (freq[k] || 0) + 1;
+
+//     if (freq[k] > max) {
+//       max = freq[k];
+//       result = k;
+//     }
+//   }
+//   return { result };
+// };
+// console.log(maxchar("aaabbccccd"));
+
+// // approach 2
+
+// const maxChar = (str) => {
+//   let map = new Map();
+//   let max = 0;
+//   let result = "";
+
+//   for (let k of str) {
+//     map.set(k, (map.get(k) || 0) + 1);
+
+//     if (map.get(k) > max) {
+//       max = map.get(k);
+//       result = k;
+//     }
+//   }
+//   return result;
+// };
+// console.log(maxChar("aaabbccccd"));
+
+//===============================================
+// 🟡 4. Check Anagram
+// Input: "listen", "silent"
+// Output: true
+
 // approach 1
-const maxchar = (str) => {
+const checkAnagram = () => {
+  const str = "listen";
+  const str1 = "silent";
   let freq = {};
-  let max = 0;
-  let result = "";
+  if (str.length !== str1.length) return false;
+
   for (let k of str) {
     freq[k] = (freq[k] || 0) + 1;
-
-    if (freq[k] > max) {
-      max = freq[k];
-      result = k;
-    }
   }
-  return { result };
+  for (let k of str1) {
+    if (!freq[k]) {
+      return false;
+    }
+    freq[k]--;
+  }
+  return true;
 };
-console.log(maxchar("aaabbccccd"));
+console.log(checkAnagram());
 
 // approach 2
-
-const maxChar = (str) => {
-  let map = new Map();
-  let max = 0;
-  let result = "";
-
-  for (let k of str) {
-    map.set(k, (map.get(k) || 0) + 1);
-
-    if (map.get(k) > max) {
-      max = map.get(k);
-      result = k;
-    }
-  }
-  return result;
+const checkanagram = () => {
+  const str = "listen";
+  const str1 = "silent";
+  return str.split("").sort().join("") === str1.split("").sort().join("");
 };
-console.log(maxChar("aaabbccccd"));
+console.log(checkanagram());
