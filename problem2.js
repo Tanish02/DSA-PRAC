@@ -196,3 +196,50 @@
 //   return { map };
 // };
 // console.log(checkanagram(["eat", "tea", "tan", "ate", "nat", "bat"]));
+
+//===================================================
+// 🟡 5. String Compression
+// Input: "aaabbc"
+// Output: "a3b2c1"
+
+// const str = "aaabbc";
+// const strcomp = () => {
+//   let result = "";
+//   let count = 0;
+//   for (let k = 0; k < str.length; k++) {
+//     if (str[k] === str[k + 1]) {
+//       count++;
+//     } else {
+//       result += str[k] + count;
+//       count = 1;
+//     }
+//   }
+//   return result;
+// };
+// console.log(strcomp());
+//======================
+// Input: "abc";
+// Compressed: "a1b1c1";
+// Output: "abc";
+// compare output with original string if longer return original string else return compressed result
+const str = "abc";
+const checkstr = () => {
+  let count = 1;
+  let result = "";
+  for (let k = 0; k < str.length; k++) {
+    if (str[k] === str[k + 1]) {
+      count++;
+    } else {
+      result += str[k] + count;
+      count = 1;
+    }
+  }
+  if (result.length >= str.length) {
+    return str;
+  } else {
+    return result;
+  }
+  // return;
+};
+
+console.log(checkstr());
