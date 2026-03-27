@@ -222,24 +222,47 @@
 // Compressed: "a1b1c1";
 // Output: "abc";
 // compare output with original string if longer return original string else return compressed result
-const str = "abc";
-const checkstr = () => {
-  let count = 1;
-  let result = "";
-  for (let k = 0; k < str.length; k++) {
-    if (str[k] === str[k + 1]) {
-      count++;
-    } else {
-      result += str[k] + count;
-      count = 1;
-    }
-  }
-  if (result.length >= str.length) {
-    return str;
-  } else {
-    return result;
-  }
-  // return;
-};
 
-console.log(checkstr());
+// const str = "abc";
+// const checkstr = () => {
+//   let count = 1;
+//   let result = "";
+//   for (let k = 0; k < str.length; k++) {
+//     if (str[k] === str[k + 1]) {
+//       count++;
+//     } else {
+//       result += str[k] + count;
+//       count = 1;
+//     }
+//   }
+//   if (result.length >= str.length) {
+//     return str;
+//   } else {
+//     return result;
+//   }
+//   // return;
+// };
+
+// console.log(checkstr());
+
+//==============================================================
+// 🟡 6. Reverse Words in Sentence
+// Input: "I love coding"
+// Output: "coding love I"
+
+const str = "I love coding";
+const reversestr = () => {
+  return str.split(" ").reverse().join(" ");
+};
+console.log(reversestr());
+
+// approach 2
+const reverseWords = (str) => {
+  let words = str.split(" ");
+  let result = "";
+  for (let i = words.length - 1; i >= 0; i--) {
+    result += words[i] + " ";
+  }
+  return result.trim();
+};
+console.log(reverseWords("I love coding"));
