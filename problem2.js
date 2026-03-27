@@ -152,30 +152,47 @@
 // Input: "listen", "silent"
 // Output: true
 
-// approach 1
-const checkAnagram = () => {
-  const str = "listen";
-  const str1 = "silent";
-  let freq = {};
-  if (str.length !== str1.length) return false;
+// // approach 1
+// const checkAnagram = () => {
+//   const str = "listen";
+//   const str1 = "silent";
+//   let freq = {};
+//   if (str.length !== str1.length) return false;
 
-  for (let k of str) {
-    freq[k] = (freq[k] || 0) + 1;
-  }
-  for (let k of str1) {
-    if (!freq[k]) {
-      return false;
-    }
-    freq[k]--;
-  }
-  return true;
-};
-console.log(checkAnagram());
+//   for (let k of str) {
+//     freq[k] = (freq[k] || 0) + 1;
+//   }
+//   for (let k of str1) {
+//     if (!freq[k]) {
+//       return false;
+//     }
+//     freq[k]--;
+//   }
+//   return true;
+// };
+// console.log(checkAnagram());
 
-// approach 2
-const checkanagram = () => {
-  const str = "listen";
-  const str1 = "silent";
-  return str.split("").sort().join("") === str1.split("").sort().join("");
-};
-console.log(checkanagram());
+// // approach 2
+// const checkanagram = () => {
+//   const str = "listen";
+//   const str1 = "silent";
+//   return str.split("").sort().join("") === str1.split("").sort().join("");
+// };
+// console.log(checkanagram());
+
+// ========================== in Group ========================================
+
+// input: ["eat", "tea", "tan", "ate", "nat", "bat"];
+
+// const checkanagram = (arr) => {
+//   let map = {};
+//   for (let k of arr) {
+//     let jack = k.split("").sort().join("");
+//     if (!map[jack]) {
+//       map[jack] = [];
+//     }
+//     map[jack].push(k);
+//   }
+//   return { map };
+// };
+// console.log(checkanagram(["eat", "tea", "tan", "ate", "nat", "bat"]));
