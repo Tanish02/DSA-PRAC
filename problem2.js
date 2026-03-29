@@ -250,7 +250,7 @@
 // Input: "I love coding"
 // Output: "coding love I"
 
-const str = "I love coding";
+// const str = "I love coding";
 
 // Approach 1 :
 // const reversestr = () => {
@@ -260,13 +260,35 @@ const str = "I love coding";
 // reversestr();
 
 // Approach 2 :
-const reversestr = () => {
-  let str1 = str.split(" ");
-  let result = "";
+// const reversestr = () => {
+//   let str1 = str.split(" ");
+//   let result = "";
 
-  for (let i = str1.length - 1; i >= 0; i--) {
-    result += str1[i] + " ";
+//   for (let i = str1.length - 1; i >= 0; i--) {
+//     result += str1[i] + " ";
+//   }
+//   return result;
+// };
+// console.log(reversestr());
+
+//===========================================
+// Longest Word in a Sentence
+// Input:  "I love programming very much"
+// Output: "programming"
+
+const str = "I love programming very much";
+
+const longestWord = () => {
+  let str1 = str.split(" ");
+  // console.log(str1);
+  let longest = "";
+  let result = "";
+  for (let i = 0; i < str1.length; i++) {
+    if (str1[i].length > longest.length) {
+      longest = str1[i];
+      result = longest;
+    }
   }
-  return result;
+  return { result };
 };
-console.log(reversestr());
+console.log(longestWord());
