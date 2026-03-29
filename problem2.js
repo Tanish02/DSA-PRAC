@@ -258,3 +258,15 @@ const str = "I love coding";
 //   console.log(str1);
 // };
 // reversestr();
+
+// Approach 2 :
+const reversestr = () => {
+  let str1 = str.split(" ");
+  let result = "";
+
+  for (let i = str1.length - 1; i >= 0; i--) {
+    result += str1[i] + " ";
+  }
+  return result;
+};
+console.log(reversestr());
