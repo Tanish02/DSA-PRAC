@@ -251,18 +251,10 @@
 // Output: "coding love I"
 
 const str = "I love coding";
-const reversestr = () => {
-  return str.split(" ").reverse().join(" ");
-};
-console.log(reversestr());
 
-// approach 2
-const reverseWords = (str) => {
-  let words = str.split(" ");
-  let result = "";
-  for (let i = words.length - 1; i >= 0; i--) {
-    result += words[i] + " ";
-  }
-  return result.trim();
-};
-console.log(reverseWords("I love coding"));
+// Approach 1 :
+// const reversestr = () => {
+//   let str1 = str.split(" ").reverse().join(" ");
+//   console.log(str1);
+// };
+// reversestr();
