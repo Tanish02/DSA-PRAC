@@ -276,19 +276,41 @@
 // Input:  "I love programming very much"
 // Output: "programming"
 
-const str = "I love programming very much";
+// const str = "I love programming very much";
 
-const longestWord = () => {
-  let str1 = str.split(" ");
-  // console.log(str1);
-  let longest = "";
+// const longestWord = () => {
+//   let str1 = str.split(" ");
+//   // console.log(str1);
+//   let longest = "";
+//   let result = "";
+//   for (let i = 0; i < str1.length; i++) {
+//     if (str1[i].length > longest.length) {
+//       longest = str1[i];
+//       result = longest;
+//     }
+//   }
+//   return { result };
+// };
+// console.log(longestWord());
+
+//==================================================
+
+// 🟠 8. Check Palindrome (Ignore case & symbols)
+// Input: "A man, a plan, a canal: Panama"
+// Output: true
+
+const str = "A man, a plan, a canal: Panama";
+
+// approach 1
+const ispalindrome = () => {
   let result = "";
-  for (let i = 0; i < str1.length; i++) {
-    if (str1[i].length > longest.length) {
-      longest = str1[i];
-      result = longest;
+
+  for (let k of str.toLowerCase()) {
+    if ((k >= "a" && k <= "z") || (k >= "0" && k <= "9")) {
+      result += k;
     }
   }
-  return { result };
+  let rev = result.split("").reverse().join("");
+  return result === rev;
 };
-console.log(longestWord());
+console.log(ispalindrome());
