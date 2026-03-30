@@ -147,7 +147,7 @@
 // };
 // console.log(maxChar("aaabbccccd"));
 
-//===============================================
+//=======================================================================
 // 🟡 4. Check Anagram
 // Input: "listen", "silent"
 // Output: true
@@ -217,7 +217,7 @@
 //   return result;
 // };
 // console.log(strcomp());
-//======================
+//=========================================================================
 // Input: "abc";
 // Compressed: "a1b1c1";
 // Output: "abc";
@@ -299,18 +299,39 @@
 // Input: "A man, a plan, a canal: Panama"
 // Output: true
 
-const str = "A man, a plan, a canal: Panama";
+// const str = "A man, a plan, a canal: Panama";
 
-// approach 1
-const ispalindrome = () => {
-  let result = "";
+// // approach 1
+// const ispalindrome = () => {
+//   let result = "";
 
-  for (let k of str.toLowerCase()) {
-    if ((k >= "a" && k <= "z") || (k >= "0" && k <= "9")) {
-      result += k;
+//   for (let k of str.toLowerCase()) {
+//     if ((k >= "a" && k <= "z") || (k >= "0" && k <= "9")) {
+//       result += k;
+//     }
+//   }
+//   let rev = result.split("").reverse().join("");
+//   return result === rev;
+// };
+// console.log(ispalindrome());
+
+//=====================================================
+// 🔴 9. Group Anagrams
+// Input: ["eat","tea","tan","ate","nat","bat"]
+// Output: [["eat","tea","ate"],["tan","nat"],["bat"]]
+// 👉 Uses hashing + sorting
+
+const str = ["eat", "tea", "tan", "ate", "nat", "bat"];
+const anagrams = () => {
+  let map = {};
+  for (let k of str) {
+    let key = k.split("").sort().join("");
+    if (!map[key]) {
+      map[key] = [];
     }
+    map[key].push(k);
   }
-  let rev = result.split("").reverse().join("");
-  return result === rev;
+  return [map];
+  // return Object.values(map);
 };
-console.log(ispalindrome());
+console.log(anagrams());
