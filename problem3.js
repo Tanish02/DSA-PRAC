@@ -98,24 +98,48 @@
 ////// approach 1 :
 
 const num = 38;
-const addDigit = () => {
+const digit = () => {
   if (num === 0) return 0;
-  return 1 + ((num - 1) % 9);
+  {
+    return 1 + ((num - 1) % 9);
+  }
 };
-console.log(addDigit());
+console.log(digit());
 
 ////// approach 2 :
 
-const addDigit = (num) => {
-  while (num > 9) {
-    let digit = num.toString().split("");
-    let sum = 0;
+// const addDigit = (num) => {
+//   while (num > 9) {
+//     let digit = num.toString().split("");
+//     let sum = 0;
 
-    for (let k of digit) {
-      sum += Number(k);
-    }
-    num = sum;
+//     for (let k of digit) {
+//       sum += Number(k);
+//     }
+//     num = sum;
+//   }
+//   return num;
+// };
+// console.log(addDigit(38));
+
+//================================================================================
+// 2. First Unique Character in String (387)
+// Input: s = "leetcode"
+// Output: 0
+// Explanation
+// 'l' is first non-repeating character.
+
+const s = "leetcode";
+const fuc = () => {
+  let check = {};
+  for (let k of s) {
+    check[k] = (check[k] || 0) + 1;
   }
-  return num;
+  for (let i = 0; i < s.length; i++) {
+    if (check[s[i]] === 1) {
+      return i;
+    }
+  }
+  return null;
 };
-console.log(addDigit(38));
+console.log(fuc());
