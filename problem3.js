@@ -97,14 +97,14 @@
 
 ////// approach 1 :
 
-const num = 38;
-const digit = () => {
-  if (num === 0) return 0;
-  {
-    return 1 + ((num - 1) % 9);
-  }
-};
-console.log(digit());
+// const num = 38;
+// const digit = () => {
+//   if (num === 0) return 0;
+//   {
+//     return 1 + ((num - 1) % 9);
+//   }
+// };
+// console.log(digit());
 
 ////// approach 2 :
 
@@ -129,17 +129,38 @@ console.log(digit());
 // Explanation
 // 'l' is first non-repeating character.
 
-const s = "leetcode";
-const fuc = () => {
-  let check = {};
-  for (let k of s) {
-    check[k] = (check[k] || 0) + 1;
+// const s = "leetcode";
+// const fuc = () => {
+//   let check = {};
+//   for (let k of s) {
+//     check[k] = (check[k] || 0) + 1;
+//   }
+//   for (let i = 0; i < s.length; i++) {
+//     if (check[s[i]] === 1) {
+//       return i;
+//     }
+//   }
+//   return null;
+// };
+// console.log(fuc());
+
+//============================================================================
+// 3. Minimum Number Game (2974)
+// Input: nums = [5,4,2,3]
+// Output: [3,2,5,4]
+// logic = nums.sort() -> [2,3,4,5] -> [2,3]-[4,5]
+// [2,3]-[4,5] -> switch [3,2]-[5,4]=[3,2,5,4]
+
+const nums = [5, 4, 2, 3];
+const numGame = () => {
+  nums.sort((a, b) => a - b);
+  let result = [];
+  for (let i = 0; i < nums.length; i += 2) {
+    result.push(nums[i + 1]);
+    result.push(nums[i]);
   }
-  for (let i = 0; i < s.length; i++) {
-    if (check[s[i]] === 1) {
-      return i;
-    }
-  }
-  return null;
+  return result;
 };
-console.log(fuc());
+console.log(numGame());
+
+//============================================================================
