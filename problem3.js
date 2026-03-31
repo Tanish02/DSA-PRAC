@@ -151,16 +151,45 @@
 // logic = nums.sort() -> [2,3,4,5] -> [2,3]-[4,5]
 // [2,3]-[4,5] -> switch [3,2]-[5,4]=[3,2,5,4]
 
-const nums = [5, 4, 2, 3];
-const numGame = () => {
-  nums.sort((a, b) => a - b);
-  let result = [];
-  for (let i = 0; i < nums.length; i += 2) {
-    result.push(nums[i + 1]);
-    result.push(nums[i]);
-  }
-  return result;
-};
-console.log(numGame());
+// const nums = [5, 4, 2, 3];
+// const numGame = () => {
+//   nums.sort((a, b) => a - b);
+//   let result = [];
+//   for (let i = 0; i < nums.length; i += 2) {
+//     result.push(nums[i + 1]);
+//     result.push(nums[i]);
+//   }
+//   return result;
+// };
+// console.log(numGame());
 
 //============================================================================
+// 4. Check if Two String Arrays are Equivalent (1662 / similar)
+// Input: word1 = ["ab","c"]
+// Input: word2 = ["a","bc"]
+// Output: true
+// logic = word1 = ["ab","c"] = "abc" // word2 = ["a","bc"] = "abc" // abc in both true
+//
+
+// approach 1 :
+
+const word1 = ["ab", "c"];
+const word2 = ["a", "bc"];
+const checkstr = () => {
+  let str1 = word1.join("");
+  let str2 = word2.join("");
+  if (str1 === str2) {
+    return true;
+  } else {
+    return false;
+  }
+};
+console.log(checkstr());
+
+// approach 2 :
+
+const arrayStringsAreEqual = (word1, word2) => {
+  return word1.join("") === word2.join("");
+};
+
+console.log(arrayStringsAreEqual(["ab", "c"], ["a", "bc"]));
