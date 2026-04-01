@@ -211,15 +211,41 @@ const sentences = [
   "this is great thanks",
 ];
 
-const maxWords = () => {
-  let max = 0;
-  for (let k of sentences) {
-    let count = k.split(" ").length;
+// const maxWords = () => {
+//   let max = 0;
+//   for (let k of sentences) {
+//     let count = k.split(" ").length;
 
-    if (count > max) {
-      max = count;
+//     if (count > max) {
+//       max = count;
+//     }
+//   }
+//   return max;
+// };
+// console.log(maxWords());
+
+//=======================================================================================
+// 6. Count the Digits That Divide a Number (2520)
+// Input: num = 1248
+// Output: 4
+// Explanation
+// 1,2,4,8 all divide 1248.
+
+const countDigits = (num) => {
+  let original = num;
+  let count = 0;
+
+  while (num > 0) {
+    let digit = num % 10;
+
+    if (original % digit === 0) {
+      count++;
     }
+
+    num = Math.floor(num / 10);
   }
-  return max;
+
+  return count;
 };
-console.log(maxWords());
+
+console.log(countDigits(1248));
