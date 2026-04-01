@@ -171,25 +171,55 @@
 // logic = word1 = ["ab","c"] = "abc" // word2 = ["a","bc"] = "abc" // abc in both true
 //
 
-// approach 1 :
+// // approach 1 :
 
-const word1 = ["ab", "c"];
-const word2 = ["a", "bc"];
-const checkstr = () => {
-  let str1 = word1.join("");
-  let str2 = word2.join("");
-  if (str1 === str2) {
-    return true;
-  } else {
-    return false;
+// const word1 = ["ab", "c"];
+// const word2 = ["a", "bc"];
+// const checkstr = () => {
+//   let str1 = word1.join("");
+//   let str2 = word2.join("");
+//   if (str1 === str2) {
+//     return true;
+//   } else {
+//     return false;
+//   }
+// };
+// console.log(checkstr());
+
+// // approach 2 :
+
+// const arrayStringsAreEqual = (word1, word2) => {
+//   return word1.join("") === word2.join("");
+// };
+
+// console.log(arrayStringsAreEqual(["ab", "c"], ["a", "bc"]));
+
+//=========================================================================
+// 5. Maximum Number of Words Found in Sentences (2114)
+// Input: sentences = ["alice and bob love leetcode","i think so too","this is great thanks"]
+// Output: 5
+
+// When the problem says use this
+// maximum;
+// largest;
+// longest;
+// highest;
+
+const sentences = [
+  "alice and bob love leetcode",
+  "i think so too",
+  "this is great thanks",
+];
+
+const maxWords = () => {
+  let max = 0;
+  for (let k of sentences) {
+    let count = k.split(" ").length;
+
+    if (count > max) {
+      max = count;
+    }
   }
+  return max;
 };
-console.log(checkstr());
-
-// approach 2 :
-
-const arrayStringsAreEqual = (word1, word2) => {
-  return word1.join("") === word2.join("");
-};
-
-console.log(arrayStringsAreEqual(["ab", "c"], ["a", "bc"]));
+console.log(maxWords());
