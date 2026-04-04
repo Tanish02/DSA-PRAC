@@ -26,8 +26,8 @@ function sum() {
   const arr = [3, 7, 2, 9, 4];
   let num = 0;
   for (let i = 0; i < arr.length; i++) {
-    //num += arr[i];
-    num = num + arr[i];
+    num += arr[i];
+    // num = num + arr[i];
   }
   console.log("Total :", num);
 }

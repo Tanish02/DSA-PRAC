@@ -15,3 +15,13 @@
 // ab[2] = "a";
 // ab = ab.join("");
 // console.log(ab); // Tanish = Taaish
+
+const abc = {
+  x: 1,
+};
+const xyz = abc;
+xyz.x = 2;
+
+console.log(abc.x);
+
+// output is 2 x is reassign
