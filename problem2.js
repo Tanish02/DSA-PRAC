@@ -35,7 +35,7 @@
 // 👉 Sliding window (very important for interviews)
 
 //=======================================================================
-// 🟢 1. Remove Duplicates (Easy Warm-up)
+// 🟢 1. Remove Duplicates char from string
 // Input: "aabbccdde"
 // Output: "abcde"
 
@@ -67,7 +67,7 @@
 // console.log(str3);
 
 //==================================================
-// 🟢 2. First Non-Repeating Character
+// 🟢 2. First Non-Repeating Character in a string
 // Input: "aabbcdd"
 // Output: "c"
 
@@ -107,7 +107,7 @@
 // console.log(nonrepeatchar2, "aabbcddeff");
 
 // ============================================
-// 🟡 3. Maximum Occurring Character
+// 🟡 3. Maximum Occurring Character in a string
 // Input: "aaabbccccd"
 // Output: "c"
 
@@ -129,7 +129,6 @@
 // console.log(maxchar("aaabbccccd"));
 
 // // approach 2
-
 // const maxChar = (str) => {
 //   let map = new Map();
 //   let max = 0;
@@ -158,7 +157,6 @@
 //   const str1 = "silent";
 //   let freq = {};
 //   if (str.length !== str1.length) return false;
-
 //   for (let k of str) {
 //     freq[k] = (freq[k] || 0) + 1;
 //   }
@@ -180,7 +178,7 @@
 // };
 // console.log(checkanagram());
 
-// ========================== in Group ========================================
+// ========================== Anagram in Group ========================================
 
 // input: ["eat", "tea", "tan", "ate", "nat", "bat"];
 
@@ -198,7 +196,7 @@
 // console.log(checkanagram(["eat", "tea", "tan", "ate", "nat", "bat"]));
 
 //===================================================
-// 🟡 5. String Compression
+// 🟡 5. char compression in a string
 // Input: "aaabbc"
 // Output: "a3b2c1"
 
@@ -263,7 +261,6 @@
 // const reversestr = () => {
 //   let str1 = str.split(" ");
 //   let result = "";
-
 //   for (let i = str1.length - 1; i >= 0; i--) {
 //     result += str1[i] + " ";
 //   }

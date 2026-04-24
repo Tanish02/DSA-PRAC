@@ -96,7 +96,6 @@
 // 1 + 1 = 2
 
 ////// approach 1 :
-
 // const num = 38;
 // const digit = () => {
 //   if (num === 0) return 0;
@@ -107,7 +106,6 @@
 // console.log(digit());
 
 ////// approach 2 :
-
 // const addDigit = (num) => {
 //   while (num > 9) {
 //     let digit = num.toString().split("");
@@ -187,11 +185,9 @@
 // console.log(checkstr());
 
 // // approach 2 :
-
 // const arrayStringsAreEqual = (word1, word2) => {
 //   return word1.join("") === word2.join("");
 // };
-
 // console.log(arrayStringsAreEqual(["ab", "c"], ["a", "bc"]));
 
 //=========================================================================

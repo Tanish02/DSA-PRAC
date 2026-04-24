@@ -26,6 +26,7 @@
 // 10. Count Vowels & Consonants
 
 // =========================== solutions ==================
+// switch char type of string
 // 1 Input: "aBcD"
 // Output: "AbCd"
 
@@ -44,6 +45,7 @@
 // console.log(switchchar());
 
 // =================================================
+// count char in string based on type
 // 2 Input: "taNISH"
 // Output:
 // Uppercase: 4
@@ -65,6 +67,7 @@
 // console.log(count());
 
 //=======================================================
+// seprate a string based on char type
 //3  Input: "aB1@cD"
 // Output:
 // lower: [a, c]
@@ -97,6 +100,7 @@
 
 //============================================================
 
+// print all capital char in string
 // 4 Input: "abCdeF"
 // Output: "C"
 
@@ -114,6 +118,7 @@
 // console.log(select());
 
 //===========================================
+// switch char to lower to upper & vise-versa
 // 5 Input: "a1B2c"
 // Output: "A1b2C"
 // const str = "a1B2c";
@@ -133,7 +138,7 @@
 // console.log(switchchar());
 
 //==========================================
-// 6 Remove Uppercase
+// 6 Remove Uppercase char from string
 // "aBcDeF" → "ace"
 
 // const str = "aBcDeF";
@@ -149,7 +154,7 @@
 // console.log(select("aBcDeF"));
 
 //=============================
-// 7 Replace Lowercase with *
+// 7 Replace Lowercase char with *
 // "aBcD" → "*B*D"
 //7.1 Input: "aBcD";
 // Output: "a#c#";
@@ -200,7 +205,7 @@
 // console.log(replace7_3());
 
 //==================================================
-// 8 Check if All Uppercase
+// 8 Check char in string if All Uppercase or not
 // "ABC" → true
 
 //8.1 Input: "abc"
@@ -274,7 +279,7 @@
 // console.log(allDigit("123456"));
 
 //==========================================
-// 9@ Toggle WITHOUT built-in ❗
+// 9@ Switch char WITHOUT built-in function
 // 👉 Uses:
 // charCodeAt()
 
@@ -346,7 +351,7 @@
 // console.log(charswitch("aBcD"));
 
 //=============================================
-// // 10. Count Vowels & Consonants
+// // 10. Count Vowels & Consonants in a string
 
 // input : "taNish123@AEi";
 // output : vowels : 5
@@ -358,7 +363,6 @@ const vow = (str) => {
   let consonants = 0;
   for (let k of str) {
     let code = k.charCodeAt(0);
-
     if (k >= "A" && k <= "Z") {
       k = String.fromCharCode(code + 32);
     }
